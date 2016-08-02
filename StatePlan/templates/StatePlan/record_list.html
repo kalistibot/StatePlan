@@ -1,0 +1,20 @@
+{% extends 'StatePlan/base.html' %}
+
+{% block content %}
+  
+
+    {% for record in records %}
+        <div class="record">            	
+        
+        	<div class="date">       
+        
+                 <p>Subject: {{ record.Subject }}</p>
+        
+           	</div>
+            
+   				<h1><a href="{% url 'record_detail' Subject='Basic' %}">{{ Record.Program }}</a></h1>
+                <p>{{ Record.Contents|linebreaksbr }}</p>  
+       	
+       	</div>
+   	{% endfor %}
+ {% endblock %}

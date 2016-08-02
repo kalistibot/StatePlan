@@ -1,0 +1,28 @@
+{% extends "StatePlan/base.html" %}
+
+{% block content%}
+	<h3> Records in StatePlan</h3>
+
+    <form method='Get' action=''> 
+    <input type="text" name="sq" placeholder='Search Subject' value="{{request.GET.sq}}" />
+    <input type="Submit" name="submit">
+    </form>
+    <form method='Get' action=''> 
+    <input type="text" name="programQuery" placeholder="Search Program"/>
+    <input type="Submit" name="submit">
+    </form>
+
+
+<!-- 
+	<ul>
+		{% for record in records %}
+		    <li>
+		        <a href="{% url 'record_detail' record.id %}">
+		        {{ record.Subject}} {{record.Program}}
+
+
+		        </a>
+		    </li>
+		 {% endfor %}
+    </ul> -->
+{% endblock %}
