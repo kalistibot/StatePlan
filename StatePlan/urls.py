@@ -23,6 +23,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^record/(?P<id>\d+)/',views.record_detail,name='record_detail'),
     url(r'^StatePlan/record_list',views.record_list,name='record_list'),
-    url(r'^search/', views.get_search, name='get_search'),
+    #url(r'^search/', views.get_search, name='get_search'),
    
 ]   

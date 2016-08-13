@@ -13,18 +13,32 @@ def index(request):
     query_list = Record.objects.all()
     subjectquery = request.GET.get("sq")
     programquery = request.GET.get("pq")
+    
+    ## This should be after the And attempt, which isn't working now.
+
+
+    if subjectquery and programquery:
+        query_list = query_list.filter(
+            Q(Subject__iexact=subjectquery)
+            )
+        query_list= query_list.filter(
+            Q(Program__iexact=programquery)
+            )
+  
+
+
     if subjectquery or programquery:
         query_list = query_list.filter(
-            Q(Subject=subjectquery) |
-            Q(Program=programquery) |
-            Q(Section=subjectquery)
+            Q(Subject__iexact=subjectquery) |
+            Q(Program__iexact=programquery) |
+            Q(Section__iexact=subjectquery)
             ).distinct()
     return render(request,'StatePlan/index.html',{
         'query_list': query_list,
         })
 
 
-
+   
 def record_detail(request, id):
     try:
         record = Record.objects.get(id=id)
@@ -35,21 +49,6 @@ def record_detail(request, id):
 
             'record': record,
         })
-
-    # record = get_object_or_404(Record.objects.all())
-    # return render(request, 'StatePlan/record_detail.html', {'record': record})(request, 'StatePlan/record_list.html', {'records': records})
-
-
-
-
-def get_search(request):
-    #if request.method == 'SearchForm':
-    form = SearchForm(request.POST)
-    #if form.is_valid():
-     #   return HttpResponseRedirect('/search/')
-    #else:
-     #   search  = SearchForm()
-    return render(request, 'StatePlan/search.html', {'form': form})
 
 
 def record_list(request):
