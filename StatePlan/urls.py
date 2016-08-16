@@ -19,10 +19,14 @@ from StatePlan import views
 #from .views import RecordListView
 
 urlpatterns = [
+
     url(r'^admin/', admin.site.urls),
+    url(r'^StatePlan/', views.StatePlan, name='StatePlan'),
+    url(r'^AttachmentPages/', views.AttachmentPages, name='AttachmentPages'),
     url(r'^$', views.index, name='index'),
     url(r'^record/(?P<id>\d+)/',views.record_detail,name='record_detail'),
+    url(r'^attPages_record/(?P<id>\d+)/',views.attPages_record_detail, name='attPages_record_detail'),
     url(r'^StatePlan/record_list',views.record_list,name='record_list'),
-    #url(r'^search/', views.get_search, name='get_search'),
+   
    
 ]   
