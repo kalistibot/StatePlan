@@ -1,0 +1,27 @@
+{% extends "TMACSP/base.html" %}
+
+{% block content%}
+	<h3> Records in TMACSP</h3>
+    <a href="{% url 'index' %}">Back to Main Menu</a>  
+    <form method='Get' action=''> 
+    <input type="text" name="subpop" placeholder='Subject/Population' value="{{request.GET.subpop}}" />
+    <!-- <input type="Submit" name="submit"> -->
+    <!-- </form> -->
+    <!-- <form method='Get' action=''>  -->
+
+    <input type="text" name="procat" placeholder="Program/Category" value="{{request.GET.procat}}"/>
+    <input type="text" name="srvreq" placeholder="Services/Requirements" value="{{request.GET.srvreq}}"/>
+    <input type="Submit" name="submit">
+    </form>
+
+	<ul>
+		{% for record in query_list %}
+		    <li>
+		        
+		        {{ record.SPA_BSP}} {{record.Subject_Population}}{{record.Program_Category}}{{record.Services_Requirements}}{{record.Section}}{{record.StatePlanSection}}{{record.SectionItem}}{{record.Contents}}{{record.PlanPage}}{{record.pdfPage}}{{record.EffectiveDate}}{{record.TransmittalNumber}}{{record.Superseded}}
+		        </a>
+		    </li>
+		 {% endfor %}
+    </ul>
+{% endblock %}
+
