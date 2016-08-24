@@ -23,7 +23,34 @@ def TMACSP(request):
             Q(Program_Category__iexact=procatquery)
             )
 
-    if subpopquery or procatquery:
+    if subpopquery and srvreqquery:
+        query_list = query_list.filter(
+            Q(Subject_Population__iexact=subpopquery)
+            )
+        query_list= query_list.filter(
+            Q(Services_Requirements__iexact=srvreqquery)
+            )
+    if procatquery and srvreqquery:
+        query_list = query_list.filter(
+            Q(Program_Category__iexact=procatquery)
+            )
+        query_list= query_list.filter(
+            Q(Services_Requirements__iexact=srvreqquery)
+            )
+
+
+    if subpopquery and procatquery and srvreqquery:
+        query_list = query_list.filter(
+            Q(Subject_Population__iexact=subpopquery)
+            )
+        query_list= query_list.filter(
+            Q(Program_Category__iexact=procatquery)
+            ) 
+        query_list=query_list.filter(
+            Q(Services_Requirements__iexact=srvreqquery)
+            )   
+
+    if subpopquery or procatquery or srvreqquery:
         query_list = query_list.filter(
             Q(Subject_Population__iexact=subpopquery) |
             Q(Program_Category__iexact=procatquery) |

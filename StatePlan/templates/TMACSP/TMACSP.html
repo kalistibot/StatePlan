@@ -14,13 +14,15 @@
     <input type="Submit" name="submit">
     </form>
 
+<h5> SPA/BSP | Subject/Population | Program/Category | Services/Requirements |   Section  |  State Plan Section | Section Item |     Contents    |   Plan Page | .PDF Page Number | Effective Date | Transmittal Number | Superseded </h5>
 	<ul>
 		{% for record in query_list %}
-		    <li>
+		    
 		        
-		        {{ record.SPA_BSP}} {{record.Subject_Population}}{{record.Program_Category}}{{record.Services_Requirements}}{{record.Section}}{{record.StatePlanSection}}{{record.SectionItem}}{{record.Contents}}{{record.PlanPage}}{{record.pdfPage}}{{record.EffectiveDate}}{{record.TransmittalNumber}}{{record.Superseded}}
-		        </a>
-		    </li>
+		        <li>{{ record.SPA_BSP}} ^.^ {{record.Subject_Population}} ^.^ {{record.Program_Category}} ^.^ {{record.Services_Requirements}} ^.^ {{record.Section}} ^.^ {{record.StatePlanSection}} ^.^ {{record.SectionItem}} ^.^ {{record.Contents}} ^.^ {{record.PlanPage}} ^.^ {{record.pdfPage}} ^.^ {{record.EffectiveDate}} ^.^ {{record.TransmittalNumber}} ^.^ {{record.Superseded}}
+		        </li>
+
+		    
 		 {% endfor %}
     </ul>
 {% endblock %}
