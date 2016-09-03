@@ -1,7 +1,7 @@
 {% extends "TMACSP/base.html" %}
 
 {% block content%}
-	<h3> Records in TMACSP</h3>
+	<h3> Texas MedicAid State Plan Policy Search Page</h3>
     <a href="{% url 'index' %}">Back to Main Menu</a>  
     <form method='Get' action=''> 
     <input type="text" name="subpop" placeholder='Subject/Population' value="{{request.GET.subpop}}" />
@@ -14,12 +14,12 @@
     <input type="Submit" name="submit">
     </form>
 
-<h5> SPA/BSP | Subject/Population | Program/Category | Services/Requirements |   Section  |  State Plan Section | Section Item |     Contents    |   Plan Page | .PDF Page Number | Effective Date | Transmittal Number | Superseded </h5>
+<h5> SPA/BSP | Subject/Population | Program/Category | Services/Requirements |   Section  |  State Plan Section | Section Item |   Page Contents    |   Plan Page | .PDF Page Number | Effective Date | Transmittal Number | Superseded </h5>
 	<ul>
 		{% for record in query_list %}
 		    
 		        
-		        <li>{{ record.SPA_BSP}}  | {{record.Subject_Population}}  | {{record.Program_Category}}  |   {{record.Services_Requirements}}  | {{record.Section}}   |  {{record.StatePlanSection}}   |   {{record.SectionItem}}   |   {{record.Contents}}   |   {{record.PlanPage}}   |   {{record.pdfPage}} | {{record.EffectiveDate}}   |   {{record.TransmittalNumber}}   |   {{record.Superseded}}
+		        <li>{{ record.SPA_BSP}}  | {{record.Subject_Population}}  | {{record.Program_Category}}  |   {{record.Services_Requirements}}  | {{record.Section}}   |  {{record.StatePlanSection}}   |   {{record.PageContents}}   |   {{record.PlanPage}}   |   {{record.pdfPage}} | {{record.EffectiveDate}}   |   {{record.TransmittalNumber}}   |   {{record.Superseded}}
 		        </li>
 
 		    
