@@ -10,7 +10,5 @@ class RecordAdmin(admin.ModelAdmin):
 	#     super(ClassName, self).__init__()
 	#     self.arg = arg
 		
-
-
 admin.site.register(TMACSP_record,RecordAdmin)
 

@@ -16,18 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from StatePlan import views
-#from .views import RecordListView
 
 urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
     url(r'^TMACSP/', views.TMACSP, name='TMACSP'),
     url(r'^$', views.index, name='index'),
-    url(r'^record/(?P<id>\d+)/',views.record_detail,name='record_detail'),
     url(r'^TMACSP_record/(?P<id>\d+)/',views.TMACSP_record_detail, name='TMACSP_record_detail'),
-
-
-
-   
    
 ]   

@@ -38,7 +38,6 @@ def TMACSP(request):
             Q(Services_Requirements__iexact=srvreqquery)
             )
 
-
     if subpopquery and procatquery and srvreqquery:
         query_list = query_list.filter(
             Q(Subject_Population__iexact=subpopquery)
@@ -60,31 +59,9 @@ def TMACSP(request):
         'query_list': query_list,
         })
 
-
-
-
-
-
 def index(request):
    return render(request,'StatePlan/index.html')
 
-def record_detail(request, id):
-    try:
-        record = Record.objects.get(id=id)
-    except Record.DoesNotExist:
-        raise Http404('This item does not exist')
-    return render(request, 'StatePlan/record_detail.html', {
-            'record': record,
-        })
-
-def attPages_record_detail(request, id):
-    try:
-        record = AttachmentPages_record.objects.get(id=id)
-    except AttachmentPages_record.DoesNotExist:
-        raise Http404('This item does not exist')
-    return render(request, 'AttachmentPages/attPages_record_detail.html', {
-            'record': record,
-        })
 def TMACSP_record_detail(request, id):
     try:
         record = TMACSP_record.objects.get(id=id)

@@ -17,6 +17,9 @@ class TMACSP_record(models.Model):
     Superseded= models.CharField(max_length=200,null=True)
 
 
+
+
+
 def publish(self):
     #self.published_date = timezone.now()
     self.save()
