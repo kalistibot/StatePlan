@@ -3,7 +3,7 @@ from django.contrib import admin
 from .models import TMACSP_record 
 
 class RecordAdmin(admin.ModelAdmin):
-	list_display = ['Subject_Population','Program_Category','Section']
+	list_display = ['id','Subject_Population','Program_Category','Section']
 
 	# """docstring for ClassName"""
 	# def __init__(self, arg):
