@@ -3,7 +3,6 @@ import sys
 import shutil
 import datetime
 
-# comment for fnord
 
 file = "/MedicAid.sqlite3"
 today = str(datetime.date.today())
