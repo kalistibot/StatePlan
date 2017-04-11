@@ -3,6 +3,8 @@ import sys
 import shutil
 import datetime
 
+# comment for fnord
+
 file = "/MedicAid.sqlite3"
 today = str(datetime.date.today())
 lastmonth = str(datetime.date.today() - datetime.timedelta(days=30)
